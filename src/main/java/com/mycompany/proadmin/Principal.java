@@ -5,17 +5,24 @@
  */
 package com.mycompany.proadmin;
 
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author Yuberley
+ * @author Angie
  */
 public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal
      */
+    
+    Funcion funcion = new Funcion();
+    
     public Principal() {
         initComponents();
+        setTitle("Inicio");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,7 +44,7 @@ public class Principal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 550));
         setResizable(false);
 
-        jPanelCabecera.setBackground(new java.awt.Color(153, 153, 153));
+        jPanelCabecera.setBackground(new java.awt.Color(178, 178, 178));
         jPanelCabecera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabelCabeceraTitulo.setBackground(new java.awt.Color(204, 102, 0));
@@ -78,7 +85,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanelMostrarProyectosLayout.setVerticalGroup(
             jPanelMostrarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+            .addGap(0, 384, Short.MAX_VALUE)
         );
 
         jLabelSubtitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -93,10 +100,10 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelMostrarProyectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelMostrarProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(26, 26, 26))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelSubtitulo)
+                        .addComponent(jLabelSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonAñadirProyecto)
                         .addGap(40, 40, 40))))
@@ -107,7 +114,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jPanelCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelSubtitulo)
+                    .addComponent(jLabelSubtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonAñadirProyecto))
                 .addGap(18, 18, 18)
                 .addComponent(jPanelMostrarProyectos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -119,6 +126,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButtonAñadirProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirProyectoActionPerformed
         // TODO add your handling code here:
+        String nombreProyecto = JOptionPane.showInputDialog("Nombre del proyecto");
+        if(nombreProyecto != null){
+            JOptionPane.showMessageDialog(null, "Proyecto " + nombreProyecto + " guardado!");
+        }
+        
     }//GEN-LAST:event_jButtonAñadirProyectoActionPerformed
 
     /**
